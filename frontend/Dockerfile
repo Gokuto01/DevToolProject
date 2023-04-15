@@ -1,26 +1,22 @@
-# Base image
-FROM node:14
+# Base Image
+FROM node:latest
 
-# Create and set the working directory
+# Create app directory
 WORKDIR /app
 
-# Install Expo globally
-RUN npm install -g expo-cli
-
-# Copy package.json and package-lock.json to container
-COPY package*.json ./
-
 # Install app dependencies
+COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the app to container
+# Bundle app source
 COPY . .
 
-# Set the environment variable for running the app
-ENV REACT_NATIVE_PACKAGER_HOSTNAME 0.0.0.0
+# Set environment variables
+ENV HOST 0.0.0.0
+ENV PORT 19006
 
-# Expose the port used by the app
-EXPOSE 19006
+# Expose the port
+EXPOSE 80
 
 # Start the app
-CMD ["npm", "start", "--", "--web"]
+CMD ["npm", "start"]
