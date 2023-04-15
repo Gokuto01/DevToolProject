@@ -16,7 +16,7 @@ ENV HOST 0.0.0.0
 ENV PORT 19006
 
 # Expose the port
-EXPOSE 80
+EXPOSE 19006
 
 # Start the app
-CMD ["npm", "start"]
+CMD ["npm", "start", "--web"]
