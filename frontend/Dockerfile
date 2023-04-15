@@ -20,7 +20,7 @@ COPY . .
 RUN expo build:web
 
 # Expose port 5000 for the app to listen on
-EXPOSE 19006
+EXPOSE 80
 
 # Start the app
 CMD ["npm", "start"]
