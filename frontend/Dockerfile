@@ -1,26 +1,26 @@
-# Use the official Node.js 16 image as the base image
-FROM node:16-alpine
+# Base image
+FROM node:14
 
-# Set the working directory to /app
+# Create and set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
-
-# Install Expo CLI globally
+# Install Expo globally
 RUN npm install -g expo-cli
+
+# Copy package.json and package-lock.json to container
+COPY package*.json ./
 
 # Install app dependencies
 RUN npm install
 
-# Copy the entire project to the working directory
+# Copy the rest of the app to container
 COPY . .
 
-# Build the app
-RUN expo build:web
+# Set the environment variable for running the app
+ENV REACT_NATIVE_PACKAGER_HOSTNAME 0.0.0.0
 
-# Expose port 5000 for the app to listen on
-EXPOSE 80
+# Expose the port used by the app
+EXPOSE 19006
 
 # Start the app
-CMD ["npm", "start"]
+CMD ["npm", "start", "--", "--web"]
