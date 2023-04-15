@@ -6,7 +6,7 @@ const ProfilePage = ({navigation}) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/travel')
+    fetch('http://34.236.143.191:3000/travel')
       .then(response => response.json())
       .then(data => setData(data));
   }, []);
