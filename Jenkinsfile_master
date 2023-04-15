@@ -36,7 +36,7 @@ pipeline {
             
             stage('Trigger to slave job'){
                 steps {
-                    build job: 'slave'
+                    build job: 'Jenkinsfile_slave'
                 }
             }
         }
