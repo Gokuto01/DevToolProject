@@ -5,7 +5,7 @@ const NewsPage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://34.236.143.191:3000/news')
+    fetch('http://3.92.144.33:3000/news')
       .then(response => response.json())
       .then(data => setData(data));
   }, []);

@@ -6,7 +6,7 @@ const StationCallPage = () => {
 
   useEffect(() => {
     // Fetch stop data from API
-    fetch('http://34.236.143.191:3000/stops')
+    fetch('http://3.92.144.33:3000/stops')
       .then(response => response.json())
       .then(data => setStops(data));
   }, []);

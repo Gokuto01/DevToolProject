@@ -6,7 +6,7 @@ const BusCallPage = () => {
 
   useEffect(() => {
     // Fetch bus data from API
-    fetch('http://34.236.143.191/:3000/buses')
+    fetch('http://3.92.144.33:3000/buses')
       .then(response => response.json())
       .then(data => setBuses(data));
   }, []);
