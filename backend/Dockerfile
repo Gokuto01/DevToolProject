@@ -17,7 +17,7 @@ COPY . .
 ENV PORT=3000
 
 # Expose the port on which the application will run
-EXPOSE $PORT
+EXPOSE 80
 
 # Start the application
 CMD ["npm", "start"]
